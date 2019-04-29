@@ -1,5 +1,5 @@
-# Cofffe Store
-A simple project
+# Coffe Store
+A simple node API project
 
 ## Steps to run
 1. Set .env
