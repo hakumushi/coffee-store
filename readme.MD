@@ -1,4 +1,4 @@
-# Coffe Store
+# Coffee Store
 A simple node API project
 
 ## Steps to run
