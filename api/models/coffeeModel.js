@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const CoffeeSchema = new Schema({
-    name: { type: String, required: true, }, 
+    name: { type: String, required: true, index: { unique: true, }, }, 
     intensity: { type: Number, required: true, },
     cupSize: { type: Number, required: true, },
     aromaticProfile: { type: String, required: true, },
