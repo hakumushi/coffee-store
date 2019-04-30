@@ -16,6 +16,4 @@ const CoffeeRoute = (app) => {
 
 };
 
-module.exports = {
-    CoffeeRoute,
-};
+export default CoffeeRoute;

@@ -14,7 +14,7 @@ const CoffeeController = {
     },
 
     createCoffee(req, res) {
-        var newCoffee = new Coffee(req.body);
+        let newCoffee = new Coffee(req.body);
         newCoffee.save((err, coffee) => {
             if (err) {
                 res.status(400).send({ "error": err.message, });
@@ -33,8 +33,7 @@ const CoffeeController = {
     },
 
     updateCoffee(req, res) {
-        let coffee = req.body;
-        Coffee.findOneAndUpdate({ _id: req.params.coffeeId, }, coffee, { new: true, }, (err, coffee) => {
+        Coffee.findOneAndUpdate({ _id: req.params.coffeeId, }, req.body, { new: true, }, (err, coffee) => {
             if (err) {
                 res.status(400).send({ "error": err.message, });
             }

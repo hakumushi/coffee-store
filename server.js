@@ -2,7 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import path from "path";
-import CoffeeRoutes from "./api/routes/coffeeRoute";
+import dotenv from "dotenv";
+import Coffee from "./api/models/coffeeModel";
+import CoffeeRoute from "./api/routes/coffeeRoute";
+
+dotenv.config();
 
 const app = express();
 const port = process.env.BACKEND_PORT;
@@ -14,8 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true, }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-
-CoffeeRoutes(app);
+CoffeeRoute(app);
 
 app.use(function (req, res) {
     res.status(404).send({ url: req.originalUrl + " not found", });
